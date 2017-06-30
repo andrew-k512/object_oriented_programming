@@ -32,22 +32,28 @@ class Cat
   end
 
   def meow
-    return "My name is #{}"
+    if @meal_time < 12
+      "My name is #{name} and I eat #{preferred_food} at #{meal_time} AM."
+    elsif @meal_time >= 12
+      afternoon = @meal_time -12
+      "My name is #{name} and I eat #{preferred_food} at #{afternoon} PM."
   end
+end
 end
 
 # CAT NUMBER 1
-Cat.new('Blueberry', 'Tuna', 10)
-blueberry_cat = Cat.new('Blueberry', 'Tuna', 10)
+Cat.new('Blueberry', 'tuna', 10)
+blueberry_cat = Cat.new('Blueberry', 'tuna', 10)
 
 # CAT NUMBER 2
-Cat.new('Pumpkin', 'Meowmix', 14)
-pumpkin_cat = Cat.new('Pumpkin', 'Meowmix', 14)
+Cat.new('Pumpkin', 'meow-mix', 14)
+pumpkin_cat = Cat.new('Pumpkin', 'meow-mix', 14)
 
 
 
 
-puts blueberry_cat.name
-puts pumpkin_cat.preferred_food
 puts blueberry_cat.eats_at
 puts pumpkin_cat.eats_at
+
+puts blueberry_cat.meow
+puts pumpkin_cat.meow
